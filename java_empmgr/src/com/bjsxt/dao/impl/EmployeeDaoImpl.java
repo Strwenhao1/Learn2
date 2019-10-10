@@ -20,7 +20,12 @@ public class EmployeeDaoImpl implements EmployeeDao {
     public Employee findById(int empNo) {
         String sql = "select * from emp where empno = ?";
         Object parmars[] = {empNo};
-        List<Employee> list = DBUtil.executeQuery(sql, parmars);
+        List<Employee> list = null;
+        try {
+            list = DBUtil.executeQuery(sql, parmars,Class.forName("com.bjsxt.entity.Employee"));
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
         if(list.size()==0){
             return null;
         }else {
