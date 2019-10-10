@@ -13,6 +13,7 @@ public class test implements Callable<Integer> {
 
     public static void main(String[] args) throws Exception {
         Callable<Integer> c = new test();
+
         FutureTask<Integer> futureTask = new FutureTask<Integer>(c);
         Thread thread = new Thread(futureTask);
         thread.start();

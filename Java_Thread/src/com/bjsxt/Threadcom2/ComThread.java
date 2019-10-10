@@ -12,19 +12,6 @@ public class ComThread implements  Runnable{
     public void run() {
         while (true){
             product.Consu();
-//            synchronized (product){
-//                if(product.getFlag()==0){
-//                    try {
-//                        product.wait();
-//                    } catch (InterruptedException e) {
-//                        e.printStackTrace();
-//                    }
-//                }
-//                    System.out.println("消费者 消费了"+product.getName()+"   "+product.getColor());
-//                    product.setFlag(0);
-//                    product.notify();
-//            }
-
         }
     }
 }

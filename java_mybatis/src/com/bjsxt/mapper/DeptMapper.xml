@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="a.b">
+    <select id="queryAll" resultType="com.bjsxt.entity.Dept">
+    select * from dept;
+    </select>
+    <select id="queryAll2" resultType="map">
+    select * from dept;
+    </select>
+    <select id="selectOne" resultType="dept">
+        select * from dept where deptno = #{id}
+    </select>
+    <!--插入数据，其中的大括号里面的数据要和类中的名称一样-->
+    <insert id="insertOne" parameterType="com.bjsxt.entity.Dept" statementType="PREPARED" keyProperty="id" useGeneratedKeys="true">
+        insert into dept values(#{deptNo},#{dname},#{loc});
+    </insert>
+
+    <update id="updateOne" parameterType="com.bjsxt.entity.Dept">
+        update dept set dname=#{dname},loc=#{loc} where deptno=#{deptNo};
+    </update>
+    <delete id="deleteOne" parameterType="dept">
+        delete from dept where deptno=#{deptNo};
+    </delete>
+</mapper>

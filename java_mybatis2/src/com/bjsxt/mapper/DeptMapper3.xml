@@ -1,0 +1,25 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.bjsxt.mapper.DeptMapper3">
+    <select id="selectByNo" resultType="dept">
+        select * from dept where deptno = #{deptNo};
+    </select>
+    <select id="selectAll" resultType="dept">
+        select * from dept;
+    </select>
+
+    <select id="selectByNo2" resultType="dept">
+           select * from dept where deptno = #{deptNo};
+    </select>
+    <select id="selectAll2" resultMap="rm">
+        select * from dept;
+    </select>
+
+    <resultMap id="rm" type="dept">
+        <id column="deptno" property="deptNo"></id>
+        <collection property="list" column="deptno" select="com.bjsxt.mapper.EmpMapper2.selectByNo2" ofType="emp"></collection>
+    </resultMap>
+
+</mapper>

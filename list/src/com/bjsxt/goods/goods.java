@@ -1,5 +1,7 @@
 package com.bjsxt.goods;
 
+import java.util.Objects;
+
 public class goods {
     private int gid;
     private int gprice;
@@ -14,6 +16,22 @@ public class goods {
                 ", gname='" + gname + '\'' +
                 ", gamount=" + gamount +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        goods goods = (goods) o;
+        return gid == goods.gid &&
+                gprice == goods.gprice &&
+                gamount == goods.gamount &&
+                Objects.equals(gname, goods.gname);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(gid, gprice, gname, gamount);
     }
 
     public goods() {

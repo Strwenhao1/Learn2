@@ -1,0 +1,10 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.bjsxt.mapper.Mapper">
+    <select id="selectAll" resultType="Object">
+        select * from emp natural  join dept ;
+    </select>
+
+</mapper>

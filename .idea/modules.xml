@@ -3,9 +3,16 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Java_IO/Java_IO.iml" filepath="$PROJECT_DIR$/Java_IO/Java_IO.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Java_Socket/Java_Socket.iml" filepath="$PROJECT_DIR$/Java_Socket/Java_Socket.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Java_Test/Java_Test.iml" filepath="$PROJECT_DIR$/Java_Test/Java_Test.iml" />
       <module fileurl="file://$PROJECT_DIR$/Java_Thread/Java_Thread.iml" filepath="$PROJECT_DIR$/Java_Thread/Java_Thread.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Java_jdbc/Java_jdbc.iml" filepath="$PROJECT_DIR$/Java_jdbc/Java_jdbc.iml" />
+      <module fileurl="file://$PROJECT_DIR$/javaSE.iml" filepath="$PROJECT_DIR$/javaSE.iml" />
+      <module fileurl="file://$PROJECT_DIR$/java_empmgr/java_empmgr.iml" filepath="$PROJECT_DIR$/java_empmgr/java_empmgr.iml" />
+      <module fileurl="file://$PROJECT_DIR$/java_mybatis/java_mybatis.iml" filepath="$PROJECT_DIR$/java_mybatis/java_mybatis.iml" />
+      <module fileurl="file://$PROJECT_DIR$/java_mybatis2/java_mybatis2.iml" filepath="$PROJECT_DIR$/java_mybatis2/java_mybatis2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/java_reflect/java_reflect.iml" filepath="$PROJECT_DIR$/java_reflect/java_reflect.iml" />
       <module fileurl="file://$PROJECT_DIR$/list/list.iml" filepath="$PROJECT_DIR$/list/list.iml" />
-      <module fileurl="file://$PROJECT_DIR$/listAndset.iml" filepath="$PROJECT_DIR$/listAndset.iml" />
     </modules>
   </component>
 </project>

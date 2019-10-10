@@ -79,6 +79,7 @@ public class Product {
 
         lock.lock();
         try {
+
             if (this.getFlag() == 0) {
                 try {
                     comCondition.await();
