@@ -10,21 +10,20 @@
     <typeAliases>
         <package name="com.bjsxt.entity"/>
     </typeAliases>
-    <environments default="mysql">
-        <environment id="mysql">
-            <transactionManager type="JDBC"></transactionManager>
-            <dataSource type="POOLED">
-                <property name="driver" value="${mysqlDRIVER}"/>
-                <property name="url" value="${mysqlURL}"/>
-                <property name="username" value="${mysqUSERNAME}"/>
-                <property name="password" value="${mysqlPASSWORD}"/>
-            </dataSource>
-        </environment>
-    </environments>
-
+   <environments default="mysql">
+       <environment id="mysql">
+           <transactionManager type="JDBC"></transactionManager>
+           <dataSource type="POOLED">
+               <property name="driver" value="${mysqlDRIVER}"/>
+               <property name="url" value="${mysqlURL}"/>
+               <property name="username" value="${mysqUSERNAME}"/>
+               <property name="password" value="${mysqlPASSWORD}"/>
+           </dataSource>
+       </environment>
+   </environments>
     <mappers>
         <mapper resource="com/bjsxt/mapper/DeptMapper.xml"></mapper>
         <mapper resource="com/bjsxt/mapper/EmpMapper.xml"></mapper>
-
+        <mapper resource="com/bjsxt/mapper/EmpMapper2.xml"></mapper>
     </mappers>
 </configuration>

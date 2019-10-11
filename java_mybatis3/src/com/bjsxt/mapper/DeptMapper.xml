@@ -1,17 +1,25 @@
-<?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.bjsxt.mapper.DeptMapper">
-    <select id="selectByNo1" resultType="dept">
+    <select id="selectByNo" resultType="dept">
         select * from dept where deptno = #{deptNo};
     </select>
 
     <select id="selectAll" resultMap="rm">
-        select  * from dept;
+        select * from dept d inner join emp e where d.deptno = e.deptno;
     </select>
 
     <resultMap id="rm" type="dept">
-        <collection property="list" column="deptno" select="com.bjsxt.mapper.EmpMapper.selectByNo" ofType="emp"></collection>
+        <id column="deptno" property="deptNo"></id>
+        <result column="dname" property="dname"></result>
+        <result column="loc" property="loc"></result>
+        <collection property="list" ofType="emp">
+            <id column="empno" property="empNo"></id>
+            <result column="ename" property="ename"></result>
+            <result column="mgr" property="mgr"></result>
+            <result column="sal" property="sal"></result>
+            <result column="job" property="job"></result>
+        </collection>
     </resultMap>
 </mapper>
