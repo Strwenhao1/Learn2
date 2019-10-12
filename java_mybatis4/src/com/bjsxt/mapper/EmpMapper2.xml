@@ -1,0 +1,31 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bjsxt.mapper.EmpMapper2">
+    <select id="select" resultType="emp">
+        select * from emp
+        <where>
+            <if test="name != null and name !=''">
+                and ename = #{name}
+            </if>
+            <if test="job != null and job != ''">
+                and job = #{job}
+            </if>
+        </where>
+    </select>
+
+    <select id="select2" resultType="emp">
+        select * from emp
+        <trim prefix="where" prefixOverrides="and|or">
+            <if test="name != null and name !=''">
+                and ename = #{name}
+            </if>
+            <if test="job != null and job != ''">
+                and job = #{job}
+            </if>
+        </trim>
+    </select>
+
+
+
+</mapper>

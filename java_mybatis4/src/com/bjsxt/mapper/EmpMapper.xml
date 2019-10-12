@@ -1,0 +1,18 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bjsxt.mapper.EmpMapper">
+    <select id="selectAll" resultMap="rm">
+        select * from emp e inner join dept d where e.deptno = d.deptno;
+    </select>
+    <resultMap id="rm" type="emp">
+        <id column="empno" property="empNo"></id>
+        <result column="ename" property="ename"></result>
+        <result column="job" property="job"></result>
+        <association property="dept" javaType="dept">
+            <id column="deptno" property="deptNo"></id>
+            <result column="dname" property="dname"></result>
+            <result column="loc" property="loc"></result>
+        </association>
+    </resultMap>
+</mapper>
