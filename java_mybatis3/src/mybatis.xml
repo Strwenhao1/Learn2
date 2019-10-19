@@ -23,6 +23,7 @@
    </environments>
     <mappers>
         <mapper resource="com/bjsxt/mapper/DeptMapper.xml"></mapper>
+        <mapper resource="com/bjsxt/mapper/DeptMapper2.xml"></mapper>
         <mapper resource="com/bjsxt/mapper/EmpMapper.xml"></mapper>
         <mapper resource="com/bjsxt/mapper/EmpMapper2.xml"></mapper>
     </mappers>

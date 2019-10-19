@@ -9,4 +9,5 @@ public interface EmpMapper3 {
     public List<Emp> select(@Param("ename") String ename);
     public List<Emp> select2(@Param("ename") String ename);
     public List<Emp> select3(List<String> list);
+    public List<Emp> selectByNo(@Param("ename") String ename,@Param("job") String job);
 }

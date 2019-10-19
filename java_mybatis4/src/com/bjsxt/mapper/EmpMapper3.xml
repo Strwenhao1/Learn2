@@ -2,6 +2,10 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.bjsxt.mapper.EmpMapper3">
+    <sql id="ss">
+        select * from emp
+    </sql>
+
     <select id="select" resultType="emp">
         select * from emp
         <where>
@@ -24,13 +28,29 @@
         select * from emp
         <if test="list != null and list.size() != 0">
             <where>
-            job in
+                job in
                 <foreach collection="list" open="(" close=")" item="it" separator=",">
-                  #{it}
+                    #{it}
                 </foreach>
             </where>
         </if>
+    </select>
 
+    <select id="selectByNo" resultType="emp">
+        <include refid="ss"/>
+        <where>
+            <choose>
+                <when test="ename != null and ename != ''">
+                    and ename = #{ename}
+                </when>
+                <when test="job != null and job !=''">
+                    and job = #{job}
+                </when>
+                <otherwise>
+                    1=1
+                </otherwise>
+            </choose>
+        </where>
     </select>
 
 
